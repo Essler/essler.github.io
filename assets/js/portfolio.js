@@ -1,18 +1,19 @@
 /*!
 =========================================================
-* Landing page
+* Portfolio page
 =========================================================
 
 * Copyright: 2019 DevCRUD (https://devcrud.com)
 * Licensed: (https://devcrud.com/licenses)
 * Coded by www.devcrud.com
+* Updated & maintained by OMNEverse Software Solutions
 
 =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// smooth scroll
+// Smooth scroll
 $(document).ready(function(){
     $(".navbar .nav-link").on('click', function(event) {
 
@@ -20,7 +21,7 @@ $(document).ready(function(){
 
             event.preventDefault();
 
-            var hash = this.hash;
+            let hash = this.hash;
 
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
@@ -31,9 +32,9 @@ $(document).ready(function(){
     });
 });
 
-// protfolio filters
+// Portfolio filters
 $(window).on("load", function() {
-    var t = $(".portfolio-container");
+    let t = $(".portfolio-container");
     t.isotope({
         filter: ".new",
         animationOptions: {
@@ -43,7 +44,7 @@ $(window).on("load", function() {
         }
     }), $(".filters a").click(function() {
         $(".filters .active").removeClass("active"), $(this).addClass("active");
-        var i = $(this).attr("data-filter");
+        let i = $(this).attr("data-filter");
         return t.isotope({
             filter: i,
             animationOptions: {
@@ -56,16 +57,16 @@ $(window).on("load", function() {
 });
 
 
-// google maps
+// Google Maps
 function initMap() {
-// Styles a map in night mode.
-    var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 40.674, lng: -73.945},
-        zoom: 12,
-        scrollwheel:  false,
-        navigationControl: false,
-        mapTypeControl: false,
-        scaleControl: false,
+    let map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 28.45, lng: -81.35},  // Orlando, FL
+      zoom: 12,
+      scrollwheel:  false,
+      navigationControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      // Night Mode style
       styles: [
         {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
         {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
